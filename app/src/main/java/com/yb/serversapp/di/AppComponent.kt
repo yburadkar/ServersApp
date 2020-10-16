@@ -1,6 +1,6 @@
 package com.yb.serversapp.di
 
-import com.yb.serversapp.MainActivity
+import com.yb.serversapp.features.main.MainActivity
 import com.yb.serversapp.data.di.NetworkModule
 import dagger.Component
 import javax.inject.Singleton
