@@ -1,12 +1,12 @@
 package com.yb.serversapp.di
 
-import com.yb.serversapp.MainActivity
+import com.yb.serversapp.features.main.MainActivity
 import com.yb.serversapp.data.di.NetworkModule
 import dagger.Component
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [AppModule::class, NetworkModule::class])
+@Component(modules = [AppModule::class, NetworkModule::class, ViewModelModule::class])
 interface AppComponent {
 
     fun inject(activity: MainActivity)

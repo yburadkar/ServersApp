@@ -1,5 +1,8 @@
 package com.yb.serversapp.data.di
 
+import com.yb.serversapp.data.remote.ServerStatusService
+import com.yb.serversapp.data.remote.repos.ServerStatusRepository
+import com.yb.serversapp.domain.repos.IServerStatusRepository
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
@@ -20,8 +23,18 @@ class NetworkModule {
             .build()
     }
 
+    @Singleton
+    @Provides
+    fun provideServerStatusService(retrofit: Retrofit): ServerStatusService {
+        return retrofit.create(ServerStatusService::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun provideServerStatusRepository(serverStatusRepo: ServerStatusRepository): IServerStatusRepository = serverStatusRepo
+
     companion object {
-        private const val BASE_URL = "https://private-176645-utilita.apiary-mock.com"
+        private const val BASE_URL = "https://private-176645-utilita.apiary-mock.com/"
     }
 
 }
