@@ -14,11 +14,11 @@ class ApiStatusResponse(
 ) : StatusResponse
 
 class ApiStatusDbAndApis (
-    @SerializedName("WebAPI")
+    @SerializedName("Web\u200BAPI")
     override val webApi: ApiServerStatus? = null,
-    @SerializedName("CoreAPI")
+    @SerializedName("Core\u200BAPI")
     override val coreApi: ApiServerStatus? = null,
-    @SerializedName("DocuwareAPI")
+    @SerializedName("Docuware\u200BAPI")
     override val docuwareApi: ApiServerStatus? = null,
     @SerializedName("WebAPI DB")
     override val webApiDb: ApiServerStatus? = null,
