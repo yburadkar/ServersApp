@@ -2,7 +2,7 @@ package com.yb.serversapp.features.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.yb.serversapp.domain.models.StatusResponse
+import com.yb.serversapp.domain.models.ServerStatus
 import com.yb.serversapp.domain.repos.IServerStatusRepository
 import com.yb.serversapp.helpers.DisposingViewModel
 import com.yb.serversapp.helpers.Resource
@@ -19,8 +19,8 @@ class MainViewModel @Inject constructor(
     @Named("ui") private val ui: Scheduler,
 ) : DisposingViewModel() {
 
-    private val _serverStatuses = MutableLiveData<Resource<StatusResponse>>()
-    val serverStatuses : LiveData<Resource<StatusResponse>> = _serverStatuses
+    private val _serverStatuses = MutableLiveData<Resource<List<ServerStatus>>>()
+    val serverStatuses : LiveData<Resource<List<ServerStatus>>> = _serverStatuses
 
     init {
         getServerStatuses()
@@ -36,7 +36,7 @@ class MainViewModel @Inject constructor(
                     _serverStatuses.value = Resource.error(data = _serverStatuses.value?.data, error = it)
                 },
                 onSuccess = {
-                    Timber.d("Statuses received successfully")
+                    Timber.d("Statuses received successfully = ${it.size}")
                     _serverStatuses.value = Resource.success(it)
                 }
             ).addTo(disposables)
