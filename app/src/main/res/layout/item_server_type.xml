@@ -9,6 +9,7 @@
     android:background="@color/colorPrimary"
     android:padding="8dp"
     android:textColor="@color/white"
-    android:textSize="32sp"
+    android:textStyle="bold"
+    android:textSize="24sp"
     tools:text="Sites"
     />
