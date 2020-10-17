@@ -1,0 +1,2 @@
+# Servers App
+This sample app fetches all server statuses from the mock api and displays the server status in a vertical list. It groups servers by type and displays a color coded status (based on the status class) with the response code.  
