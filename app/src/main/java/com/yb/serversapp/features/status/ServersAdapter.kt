@@ -52,10 +52,7 @@ class ServersAdapter: ListAdapter<ServerViewItem, RecyclerView.ViewHolder>(
         fun bind(item: ServerStatusItem) {
             with(binding) {
                 status.text = item.status.responseCode?.toString()
-                when(item.status.classType) {
-                    "success" -> status.setBackgroundResource(R.color.green)
-                    "alert high" -> status.setBackgroundResource(R.color.red)
-                }
+                status.setBackgroundResource(item.status.getStatusColor())
                 serverName.text = item.status.serverName
             }
         }
