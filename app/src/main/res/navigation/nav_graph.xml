@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/serversFragment">
+
+    <fragment
+        android:id="@+id/serversFragment"
+        android:name="com.yb.serversapp.features.status.ServersFragment"
+        android:label="@string/servers_dashboard_title">
+        <action
+            android:id="@+id/action_serversFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.yb.serversapp.features.status.DetailFragment"
+        android:label="@string/server_detail_title">
+        <argument
+            android:name="serverStatus"
+            app:argType="com.yb.serversapp.features.status.UiServerStatus" />
+    </fragment>
+
+</navigation>
