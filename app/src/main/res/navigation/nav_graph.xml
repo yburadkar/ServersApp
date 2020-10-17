@@ -7,7 +7,7 @@
     <fragment
         android:id="@+id/serversFragment"
         android:name="com.yb.serversapp.features.status.ServersFragment"
-        android:label="ServersFragment">
+        android:label="@string/servers_dashboard_title">
         <action
             android:id="@+id/action_serversFragment_to_detailFragment"
             app:destination="@id/detailFragment" />
@@ -16,7 +16,7 @@
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.yb.serversapp.features.status.DetailFragment"
-        android:label="DetailFragment">
+        android:label="@string/server_detail_title">
         <argument
             android:name="serverStatus"
             app:argType="com.yb.serversapp.features.status.UiServerStatus" />

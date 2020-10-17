@@ -2,4 +2,6 @@
     <string name="app_name">Servers App</string>
     <string name="loading_error_message">Failed to load statuses</string>
     <string name="url_null_text">URL not available</string>
+    <string name="servers_dashboard_title">Servers Dashboard</string>
+    <string name="server_detail_title">Server Detail</string>
 </resources>
