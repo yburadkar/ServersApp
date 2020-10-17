@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.AsyncDifferConfig
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.yb.serversapp.R
 import com.yb.serversapp.databinding.ItemServerBinding
 import com.yb.serversapp.databinding.ItemServerTypeBinding
 import com.yb.serversapp.domain.models.ServerStatus
@@ -51,6 +52,10 @@ class ServersAdapter: ListAdapter<ServerViewItem, RecyclerView.ViewHolder>(
         fun bind(item: ServerStatusItem) {
             with(binding) {
                 status.text = item.status.responseCode?.toString()
+                when(item.status.classType) {
+                    "success" -> status.setBackgroundResource(R.color.green)
+                    "alert high" -> status.setBackgroundResource(R.color.red)
+                }
                 serverName.text = item.status.serverName
             }
         }
@@ -61,7 +66,6 @@ class ServersAdapter: ListAdapter<ServerViewItem, RecyclerView.ViewHolder>(
             }
         }
     }
-
 
     sealed class ServerViewItem(val viewType: Int, val id: String = UUID.randomUUID().toString()) {
         data class ServerTypeItem(val serverType: String): ServerViewItem(SERVER_TYPE_VIEWTYPE)

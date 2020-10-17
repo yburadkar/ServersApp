@@ -7,6 +7,7 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="4dp"
     android:padding="8dp"
+    android:background="@color/light_grey"
     >
 
     <TextView
@@ -21,7 +22,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/colorPrimary"
+        tools:background="?attr/colorPrimary"
         tools:text="200"
         />
 
@@ -30,7 +31,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:textSize="24sp"
+        android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@id/status"
         app:layout_constraintStart_toStartOf="parent"
