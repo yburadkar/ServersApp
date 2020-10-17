@@ -2,7 +2,7 @@ package com.yb.serversapp.di
 
 import com.yb.serversapp.features.main.MainActivity
 import com.yb.serversapp.data.di.NetworkModule
-import com.yb.serversapp.features.main.ServersFragment
+import com.yb.serversapp.features.status.ServersFragment
 import dagger.Component
 import javax.inject.Singleton
 

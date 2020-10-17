@@ -1,4 +1,4 @@
-package com.yb.serversapp.features.main
+package com.yb.serversapp.features.status
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -13,7 +13,7 @@ import timber.log.Timber
 import javax.inject.Inject
 import javax.inject.Named
 
-class MainViewModel @Inject constructor(
+class ServersViewModel @Inject constructor(
     private val statusRepo: IServerStatusRepository,
     @Named("io") private val io: Scheduler,
     @Named("ui") private val ui: Scheduler,
