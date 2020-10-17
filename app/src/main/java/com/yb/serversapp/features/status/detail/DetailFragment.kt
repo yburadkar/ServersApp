@@ -1,4 +1,4 @@
-package com.yb.serversapp.features.status
+package com.yb.serversapp.features.status.detail
 
 import android.os.Bundle
 import android.view.LayoutInflater

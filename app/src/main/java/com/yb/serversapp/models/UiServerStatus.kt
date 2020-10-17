@@ -1,4 +1,4 @@
-package com.yb.serversapp.features.status
+package com.yb.serversapp.models
 
 import android.os.Parcelable
 import androidx.annotation.ColorRes

@@ -1,4 +1,4 @@
-package com.yb.serversapp.features.status
+package com.yb.serversapp.features.status.dashboard
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
