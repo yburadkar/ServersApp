@@ -4,4 +4,7 @@
     <string name="url_null_text">URL not available</string>
     <string name="servers_dashboard_title">Servers Dashboard</string>
     <string name="server_detail_title">Server Detail</string>
+    <string name="time_null_text">Response Time not available</string>
+    <string name="class_null_text">Class not available</string>
+    <string name="code_null_text">Response code not available</string>
 </resources>
