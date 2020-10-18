@@ -23,6 +23,19 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    android {
+        sourceSets {
+            String sharedTestDir = "src/sharedTest/java"
+            test {
+                java.srcDir sharedTestDir
+            }
+            androidTest {
+                java.srcDir sharedTestDir
+            }
+        }
+    }
+
     compileOptions {
         sourceCompatibility "1.8"
         targetCompatibility "1.8"
