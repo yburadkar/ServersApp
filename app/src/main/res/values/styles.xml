@@ -6,6 +6,34 @@
         <item name="colorSecondary">@color/aqua</item>
         <item name="android:colorBackground">@color/white</item>
         <item name="colorAccent">@color/aqua</item>
+
     </style>
+
+
+    <style name="TextAppearance.ServersApp" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+
+    <style name="TextAppearance.ServersApp.Title">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="TextAppearance.ServersApp.SubTitle">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="TextAppearance.ServersApp.Body">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+
+    <style name="TextAppearance.ServersApp.Server.Category" parent="TextAppearance.ServersApp.Title">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.ServersApp.Server.Name" parent="TextAppearance.ServersApp.SubTitle" />
+
+    <style name="TextAppearance.ServersApp.Status.Body" parent="TextAppearance.ServersApp.Body" />
 
 </resources>
