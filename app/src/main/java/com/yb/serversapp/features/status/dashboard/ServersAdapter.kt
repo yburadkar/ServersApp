@@ -1,4 +1,4 @@
-package com.yb.serversapp.features.status
+package com.yb.serversapp.features.status.dashboard
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,9 +9,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.yb.serversapp.databinding.ItemServerBinding
 import com.yb.serversapp.databinding.ItemServerTypeBinding
 import com.yb.serversapp.domain.models.ServerStatus
-import com.yb.serversapp.features.status.ServersAdapter.ServerViewItem
-import com.yb.serversapp.features.status.ServersAdapter.ServerViewItem.ServerStatusItem
-import com.yb.serversapp.features.status.ServersAdapter.ServerViewItem.ServerTypeItem
+import com.yb.serversapp.features.status.dashboard.ServersAdapter.ServerViewItem
+import com.yb.serversapp.features.status.dashboard.ServersAdapter.ServerViewItem.ServerStatusItem
+import com.yb.serversapp.features.status.dashboard.ServersAdapter.ServerViewItem.ServerTypeItem
+import com.yb.serversapp.models.UiServerStatus
 import java.util.*
 
 class ServersAdapter(

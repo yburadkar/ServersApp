@@ -2,7 +2,7 @@ package com.yb.serversapp.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.yb.serversapp.features.status.ServersViewModel
+import com.yb.serversapp.features.status.dashboard.ServersViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap

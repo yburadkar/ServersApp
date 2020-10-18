@@ -1,4 +1,4 @@
-package com.yb.serversapp.features.status
+package com.yb.serversapp.features.status.dashboard
 
 import android.content.Context
 import android.os.Bundle

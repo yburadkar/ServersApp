@@ -1,4 +1,4 @@
-package com.yb.serversapp.features.status
+package com.yb.serversapp.features.status.detail
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -25,11 +25,11 @@ class DetailFragment : Fragment() {
         with(binding) {
             serverStatus.let {
                 serverName.text = it.serverName
-                status.text = it.responseCode?.toString()
+                status.text = it.responseCode?.toString() ?: getString(R.string.code_null_text)
                 status.setBackgroundResource(it.getStatusColor())
                 serverUrl.text = it.url ?: getString(R.string.url_null_text)
-                responseTime.text = it.responseTime?.toString()
-                responseClass.text = it.classType
+                responseTime.text = it.responseTime?.toString() ?: getString(R.string.time_null_text)
+                responseClass.text = it.classType ?: getString(R.string.class_null_text)
             }
         }
     }
