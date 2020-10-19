@@ -1,5 +1,6 @@
 package com.yb.serversapp.models
 
+import android.content.Context
 import android.os.Parcelable
 import androidx.annotation.ColorRes
 import com.yb.serversapp.R
@@ -16,13 +17,6 @@ data class UiServerStatus(
     val classType: String? = null,
 ) : Parcelable {
 
-    @ColorRes
-    fun getStatusColor(): Int = when(classType) {
-        "success" -> R.color.green
-        "alert high" -> R.color.red
-        else -> R.color.black
-    }
-
     constructor(status: ServerStatus): this(
         type = status.type,
         serverName = status.serverName,
@@ -31,5 +25,20 @@ data class UiServerStatus(
         responseTime = status.responseTime,
         classType = status.classType
     )
+
+    @ColorRes
+    fun getStatusColor(): Int = when(classType) {
+        "success" -> R.color.green
+        "alert high" -> R.color.red
+        else -> R.color.black
+    }
+
+    fun url(context: Context): String = url ?: context.getString(R.string.url_null_text)
+
+    fun time(context: Context): String = responseTime?.toString() ?: context.getString(R.string.time_null_text)
+
+    fun classType(context: Context): String = classType ?: context.getString(R.string.class_null_text)
+
+    fun statusCode(context: Context): String = responseCode?.toString() ?: context.getString(R.string.code_null_text)
 
 }

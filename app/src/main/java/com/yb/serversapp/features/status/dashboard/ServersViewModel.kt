@@ -22,10 +22,6 @@ class ServersViewModel @Inject constructor(
     private val _serverStatuses = MutableLiveData<Resource<List<ServerStatus>>>()
     val serverStatuses : LiveData<Resource<List<ServerStatus>>> = _serverStatuses
 
-    init {
-        getServerStatuses()
-    }
-
     fun getServerStatuses() {
         statusRepo.getServerStatuses()
             .doOnSubscribe { _serverStatuses.postValue(Resource.loading(_serverStatuses.value?.data)) }

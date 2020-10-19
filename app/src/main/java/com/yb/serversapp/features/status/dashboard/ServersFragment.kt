@@ -39,6 +39,7 @@ class ServersFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setUpViews()
         observeViewModel()
+        if(savedInstanceState == null) viewModel.getServerStatuses()
     }
 
     private fun observeViewModel() {
