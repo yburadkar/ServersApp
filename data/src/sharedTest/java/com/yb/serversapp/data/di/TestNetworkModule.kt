@@ -1,6 +1,7 @@
 package com.yb.serversapp.data.di
 
 import com.yb.serversapp.data.remote.ServerStatusService
+import com.yb.serversapp.data.repos.FakeServersRepo
 import com.yb.serversapp.domain.repos.IServerStatusRepository
 import dagger.Module
 import dagger.Provides
@@ -9,7 +10,9 @@ import retrofit2.Retrofit
 import javax.inject.Singleton
 
 @Module
-class TestNetworkModule {
+class TestNetworkModule(
+    private val statusRepo: IServerStatusRepository = FakeServersRepo
+) {
 
     @Singleton
     @Provides
@@ -21,6 +24,6 @@ class TestNetworkModule {
 
     @Singleton
     @Provides
-    fun provideServerStatusRepository(): IServerStatusRepository = mockk()
+    fun provideServerStatusRepository(): IServerStatusRepository = statusRepo
 
 }
