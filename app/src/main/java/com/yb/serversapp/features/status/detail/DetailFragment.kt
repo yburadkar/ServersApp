@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
-import com.yb.serversapp.R
 import com.yb.serversapp.databinding.FragmentDetailBinding
 
 class DetailFragment : Fragment() {
@@ -25,11 +24,11 @@ class DetailFragment : Fragment() {
         with(binding) {
             serverStatus.let {
                 serverName.text = it.serverName
-                status.text = it.responseCode?.toString() ?: getString(R.string.code_null_text)
+                status.text = it.statusCode(requireContext())
                 status.setBackgroundResource(it.getStatusColor())
-                serverUrl.text = it.url ?: getString(R.string.url_null_text)
-                responseTime.text = it.responseTime?.toString() ?: getString(R.string.time_null_text)
-                responseClass.text = it.classType ?: getString(R.string.class_null_text)
+                serverUrl.text = it.url(requireContext())
+                responseTime.text = it.time(requireContext())
+                responseClass.text = it.classType(requireContext())
             }
         }
     }
