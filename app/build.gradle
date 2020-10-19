@@ -15,7 +15,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.yb.serversapp.runner.CustomRunner"
     }
 
     buildTypes {
@@ -81,6 +81,7 @@ dependencies {
     implementation "com.google.dagger:dagger:$dagger_version"
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
     implementation "com.jakewharton.timber:timber:$timber_version"
+    debugImplementation "androidx.fragment:fragment-testing:$fragment_version"
 
     testImplementation "junit:junit:$junit_version"
     testImplementation "org.hamcrest:hamcrest:$hamcrest_version"
@@ -95,7 +96,17 @@ dependencies {
     testImplementation "androidx.test.ext:junit:$junit_ext_version"
     testImplementation "androidx.test:core-ktx:$androidx_test_core_version"
 
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    androidTestImplementation "androidx.test.ext:junit:$junit_ext_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
+    androidTestImplementation "androidx.test:rules:$test_rules_version"
+    androidTestImplementation "androidx.test:runner:$test_runner_version"
+    androidTestImplementation "androidx.test:core-ktx:$androidx_test_core_version"
+    kaptAndroidTest "com.google.dagger:dagger-compiler:$dagger_version"
+    androidTestImplementation "androidx.arch.core:core-testing:$arch_core_testing_version"
+    androidTestImplementation "io.mockk:mockk:$mockk_version"
+
+    // Testing code should not be included in the main code.
+    // Once https://issuetracker.google.com/128612536 is fixed this can be fixed.
+    implementation "androidx.test:core:$androidx_test_core_version"
 
 }
